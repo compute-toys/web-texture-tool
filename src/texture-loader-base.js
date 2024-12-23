@@ -183,7 +183,6 @@ const EXTENSION_HANDLERS = [
 const CLIENT = Symbol('wtt/WebTextureClient');
 const LOADERS = Symbol('wtt/WebTextureLoaders');
 
-const TMP_ANCHOR = document.createElement('a');
 const IMAGE_BITMAP_SUPPORTED = (typeof createImageBitmap !== 'undefined');
 
 const DEFAULT_URL_OPTIONS = {
@@ -252,6 +251,7 @@ export class TextureLoaderBase {
     const options = Object.assign({}, DEFAULT_URL_OPTIONS, textureOptions);
 
     // Use this to resolve to a full URL.
+    const TMP_ANCHOR = document.createElement('a');
     TMP_ANCHOR.href = url;
 
     // If an explicit extension wasn't provided, examine the URL to determine one.

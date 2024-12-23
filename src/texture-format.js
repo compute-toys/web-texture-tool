@@ -1,6 +1,3 @@
-// For access to WebGL enums without a context.
-const GL = WebGLRenderingContext;
-
 /**
  * Texture Format
  *
@@ -13,31 +10,31 @@ export const WebTextureFormat = {
   // Uncompressed formats
   'rgb8unorm': {
     canGenerateMipmaps: true,
-    gl: {format: GL.RGB, type: GL.UNSIGNED_BYTE, sizedFormat: 0x8051}, // RGB8
+    gl: {format: 0x1907 /*RGB*/, type: 0x1401 /*UNSIGNED_BYTE*/, sizedFormat: 0x8051}, // RGB8
   },
   'rgba8unorm': {
     canGenerateMipmaps: true,
-    gl: {format: GL.RGBA, type: GL.UNSIGNED_BYTE, sizedFormat: 0x8058}, // RGBA8
+    gl: {format: 0x1908 /*RGBA*/, type: 0x1401 /*UNSIGNED_BYTE*/, sizedFormat: 0x8058}, // RGBA8
   },
   'rgb8unorm-srgb': {
     canGenerateMipmaps: true,
-    gl: {format: GL.RGBA, type: GL.UNSIGNED_BYTE, sizedFormat: 0x8C43}, // SRGB8_ALPHA8
+    gl: {format: 0x1908 /*RGBA*/, type: 0x1401 /*UNSIGNED_BYTE*/, sizedFormat: 0x8C43}, // SRGB8_ALPHA8
   },
   'rgba8unorm-srgb': {
     canGenerateMipmaps: true,
-    gl: {format: GL.RGBA, type: GL.UNSIGNED_BYTE, sizedFormat: 0x8C43}, // SRGB8_ALPHA8
+    gl: {format: 0x1908 /*RGBA*/, type: 0x1401 /*UNSIGNED_BYTE*/, sizedFormat: 0x8C43}, // SRGB8_ALPHA8
   },
   'rgb565unorm': {
     canGenerateMipmaps: true,
-    gl: {format: GL.RGB, type: GL.UNSIGNED_SHORT_5_6_5, sizedFormat: GL.RGB565},
+    gl: {format: 0x1907 /*RGB*/, type: 0x8363 /*UNSIGNED_SHORT_5_6_5*/, sizedFormat: 0x8D62}, // RGB565
   },
   'rgba4unorm': {
     canGenerateMipmaps: true,
-    gl: {format: GL.RGBA, type: GL.UNSIGNED_SHORT_4_4_4_4, sizedFormat: GL.RGBA4},
+    gl: {format: 0x1908 /*RGBA*/, type: 0x8033 /*UNSIGNED_SHORT_4_4_4_4*/, sizedFormat: 0x8056}, // RGBA4
   },
   'rgba5551unorm': {
     canGenerateMipmaps: true,
-    gl: {format: GL.RGBA, type: GL.UNSIGNED_SHORT_5_5_5_1, sizedFormat: GL.RGB5_A1},
+    gl: {format: 0x1908 /*RGBA*/, type: 0x8034 /*UNSIGNED_SHORT_5_5_5_1*/, sizedFormat: 0x8057}, // RGB5_A1
   },
 
   'bgra8unorm': {canGenerateMipmaps: true}, // No WebGL equivalent
@@ -46,7 +43,7 @@ export const WebTextureFormat = {
   // Floating point textures
   'rg11b10ufloat': {
     canGenerateMipmaps: false,
-    gl: {format: GL.RGB, type: 0x8C3B /*UNSIGNED_INT_10F_11F_11F_REV*/, sizedFormat: 0x8C3A}, // R11F_G11F_B10F
+    gl: {format: 0x1907 /*RGB*/, type: 0x8C3B /*UNSIGNED_INT_10F_11F_11F_REV*/, sizedFormat: 0x8C3A}, // R11F_G11F_B10F
   },
 
   // Compressed formats
